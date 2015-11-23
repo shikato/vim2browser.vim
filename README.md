@@ -1,1 +1,1 @@
-# vim2browser
+# vim2browser.vim
