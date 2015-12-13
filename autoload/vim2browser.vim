@@ -2,14 +2,14 @@ let s:save_cpo = &cpo
 set cpo&vim 
 
 
-
 let s:TYPE_REPLACE_ALL = "1"
 let s:TYPE_REPLACE_SELECTED = "2"
 let s:TYPE_APPEND_ALL = "3"
 let s:TYPE_APPEND_SELECTED = "4" 
 
+" Vimが動作しているappを指定する
 " DefaultはMacVim
-" 変更する場合は
+" 変更する場合は以下
 " ex.
 " Vim2BrowserSetVimAppName Terminal
 let s:vimAppName = "MacVim"
@@ -93,7 +93,6 @@ function! s:SaveShareTextList(textList)
   endif 
   call writefile(a:textList, outputFile) 
 endfunction 
-
 
 
 let &cpo = s:save_cpo
