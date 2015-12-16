@@ -28,5 +28,7 @@ NeoBundle 'shikato/vim2browser.vim'
 | :Chrome2VimAppendSelected |The command appends a text of Vim with a selected text of a focused text area of Chrome.|
 | :Vim2BrowserSetVimAppName something |The command sets Vim Application Name. (Default: MacVim)|
 
+[Introductory article]()
+
 ## License
 MIT
