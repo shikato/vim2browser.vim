@@ -7,7 +7,7 @@ Vim2browser is a plugin to send texts with a browser in the Vim
 #### ex. [NeoBundle](https://github.com/Shougo/neobundle.vim)
 .vimrc
 ```
-eoBundle 'shikato/vim2browser.vim'
+NeoBundle 'shikato/vim2browser.vim'
 ```
 
 ## Usage
