@@ -3,6 +3,11 @@ DEMO
 
 Vim2browser is a plugin to send texts with a browser in the Vim
  
+```
+This plugin is available only in Mac.
+The reason why is because this plugin uses JXA.
+```
+ 
 ## Install
 #### ex. [NeoBundle](https://github.com/Shougo/neobundle.vim)
 .vimrc
