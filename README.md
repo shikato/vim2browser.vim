@@ -29,7 +29,8 @@ NeoBundle 'shikato/vim2browser.vim'
 | :Chrome2VimAppendAll |The command appends texts of Vim with all texts of a focused text area of Chrome.|
 | :Chrome2VimAppendSelected |The command appends texts of Vim with selected texts of a focused text area of Chrome.|
 
-[Introductory article](http://qiita.com/shikato/items/2e8af1330e3ac8949279)
+## Documents
+[Qiita](http://qiita.com/shikato/items/2e8af1330e3ac8949279)
 
 ## License
 MIT
