@@ -10,7 +10,7 @@ var clearChromeText = function () {
   var tab = win.activeTab();
   tab.selectAll(); 
   tab.cutSelection();
-  delay(0.3); 
+  delay(0.1); 
 }; 
 
 var getTextFromVim = function () {
@@ -20,9 +20,6 @@ var getTextFromVim = function () {
   var textFromVim = currentApp.doShellScript('cat $HOME/.vim2browser/share.txt');
   var textFromVimArray = textFromVim.split(/\r\n|\r|\n/);
   var retText = '';
-  // for (var i = 0; i < textFromVimArray.length; i++) {
-  //   retText += textFromVimArray[i] + '\n';
-  // } 
 
   textFromVimArray.forEach(function(textFromVim) { 
     retText += textFromVim + '\n'; 
@@ -47,7 +44,7 @@ var pasteToChrome = function (vimAppName) {
 
   var systemEvemts = Application("System Events"); 
   chromeApp.activate();
-  delay(0.3);
+  delay(0.5);
 
   // TODO: keycode other petern
   systemEvemts.keystroke("v",{ using:["command down", "shift down"]}); 
