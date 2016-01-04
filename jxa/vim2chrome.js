@@ -20,9 +20,14 @@ var getTextFromVim = function () {
   var textFromVim = currentApp.doShellScript('cat $HOME/.vim2browser/share.txt');
   var textFromVimArray = textFromVim.split(/\r\n|\r|\n/);
   var retText = '';
-  for (var i = 0; i < textFromVimArray.length; i++) {
-    retText += textFromVimArray[i] + '\n';
-  } 
+  // for (var i = 0; i < textFromVimArray.length; i++) {
+  //   retText += textFromVimArray[i] + '\n';
+  // } 
+
+  textFromVimArray.forEach(function(textFromVim) { 
+    retText += textFromVim + '\n'; 
+  });
+
   return retText;
 };
 
