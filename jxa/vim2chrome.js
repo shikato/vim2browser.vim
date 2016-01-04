@@ -5,7 +5,7 @@ var TYPE_APPEND_SELECTED = "4"
 
 var chromeApp = null; 
 
-var clearChromeText = function() {
+var clearChromeText = function () {
   var win = chromeApp.windows[0];
   var tab = win.activeTab();
   tab.selectAll(); 
@@ -13,7 +13,7 @@ var clearChromeText = function() {
   delay(0.3); 
 } 
 
-var getTextFromVim = function() {
+var getTextFromVim = function () {
   var currentApp = Application.currentApplication(); 
   currentApp.includeStandardAdditions = true; 
 
@@ -26,12 +26,12 @@ var getTextFromVim = function() {
   return retText;
 }
 
-var saveTextInClipboard = function(text) { 
+var saveTextInClipboard = function (text) { 
   chromeApp.setTheClipboardTo(text); 
 } 
 
 
-var pasteToChrome = function(vimAppName) {
+var pasteToChrome = function (vimAppName) {
   var vimApp = null;
   try { 
     vimApp = Application(vimAppName); 

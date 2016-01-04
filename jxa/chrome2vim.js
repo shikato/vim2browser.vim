@@ -5,7 +5,7 @@ var TYPE_APPEND_SELECTED = "4"
 
 var chromeApp = null; 
 
-var saveTextInClipboardFromChrome = function(type) {
+var saveTextInClipboardFromChrome = function (type) {
   var win = chromeApp.windows[0];
   var tab = win.activeTab();
   if (type === TYPE_REPLACE_ALL || type === TYPE_APPEND_ALL) {
@@ -15,7 +15,7 @@ var saveTextInClipboardFromChrome = function(type) {
   delay(0.1); 
 } 
 
-var pasteToVimApp = function(vimAppName, type) {
+var pasteToVimApp = function (vimAppName, type) {
   var vimApp = null;
   try { 
     vimApp = Application(vimAppName); 
