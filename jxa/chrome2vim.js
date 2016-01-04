@@ -3,14 +3,7 @@ var TYPE_REPLACE_SELECTED = "2";
 var TYPE_APPEND_ALL = "3"
 var TYPE_APPEND_SELECTED = "4"
 
-var chromeApp = null;
-
-try { 
-  chromeApp = Application('Google Chrome'); 
-  chromeApp.includeStandardAdditions = true; 
-} catch(e) {
-  console.log(e);
-} 
+var chromeApp = null; 
 
 var saveTextInClipboardFromChrome = function(type) {
   var win = chromeApp.windows[0];
@@ -27,7 +20,8 @@ var pasteToVimApp = function(vimAppName, type) {
   try { 
     vimApp = Application(vimAppName); 
   } catch(e) { 
-    console.log(e);
+    console.log(e); 
+    return;
   } 
 
   // TODO:  other key pattern
@@ -51,6 +45,15 @@ function run(argv){
     console.log("Arguments are necessary more than two.");
     return; 
   } 
+
+  try { 
+    chromeApp = Application('Google Chrome'); 
+    chromeApp.includeStandardAdditions = true; 
+  } catch(e) {
+    console.log(e); 
+    return;
+  } 
+
   saveTextInClipboardFromChrome(argv[0]); 
   pasteToVimApp(argv[1], argv[0]);
 }

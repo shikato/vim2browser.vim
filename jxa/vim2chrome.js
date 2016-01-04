@@ -3,14 +3,7 @@ var TYPE_REPLACE_SELECTED = "2";
 var TYPE_APPEND_ALL = "3"
 var TYPE_APPEND_SELECTED = "4" 
 
-var chromeApp = null;
-
-try { 
-  chromeApp = Application('Google Chrome'); 
-  chromeApp.includeStandardAdditions = true; 
-} catch(e) {
-  console.log(e);
-} 
+var chromeApp = null; 
 
 var clearChromeText = function() {
   var win = chromeApp.windows[0];
@@ -43,7 +36,8 @@ var pasteToChrome = function(vimAppName) {
   try { 
     vimApp = Application(vimAppName); 
   } catch(e) { 
-    console.log(e);
+    console.log(e); 
+    return;
   } 
 
   var systemEvemts = Application("System Events"); 
@@ -66,8 +60,16 @@ var pasteToChrome = function(vimAppName) {
 // argv[0] type
 // argv[1] VimAppName 
 function run(argv){ 
-  if (argv.length == 0) {
-    console.log("Arguments are necessary more than one.");
+  if (argv.length < 2) {
+    console.log("Arguments are necessary more than two.");
+    return; 
+  } 
+  
+  try { 
+    chromeApp = Application('Google Chrome'); 
+    chromeApp.includeStandardAdditions = true; 
+  } catch(e) {
+    console.log(e); 
     return; 
   }
 
