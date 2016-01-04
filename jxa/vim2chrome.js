@@ -11,7 +11,7 @@ var clearChromeText = function () {
   tab.selectAll(); 
   tab.cutSelection();
   delay(0.3); 
-} 
+}; 
 
 var getTextFromVim = function () {
   var currentApp = Application.currentApplication(); 
@@ -24,11 +24,11 @@ var getTextFromVim = function () {
     retText += textFromVimArray[i] + '\n';
   } 
   return retText;
-}
+};
 
 var saveTextInClipboard = function (text) { 
   chromeApp.setTheClipboardTo(text); 
-} 
+};
 
 
 var pasteToChrome = function (vimAppName) {
@@ -54,7 +54,7 @@ var pasteToChrome = function (vimAppName) {
   //var tab = win.activeTab(); 
   //tab.selectAll();
   //tab.pasteSelection(); 
-} 
+}; 
 
 
 // argv[0] type

@@ -13,7 +13,7 @@ var saveTextInClipboardFromChrome = function (type) {
   } 
   tab.copySelection();
   delay(0.1); 
-} 
+}; 
 
 var pasteToVimApp = function (vimAppName, type) {
   var vimApp = null;
@@ -35,7 +35,7 @@ var pasteToVimApp = function (vimAppName, type) {
     systemEvemts.keystroke("g",{ using:["shift down"]}); 
   }
   systemEvemts.keystroke("v",{ using:["command down"]}); 
-} 
+}; 
 
 // argv[0]はtype
 // argv[1]はVimAppName
