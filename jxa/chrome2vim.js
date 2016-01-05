@@ -25,16 +25,20 @@ var pasteToVimApp = function (vimAppName, type) {
   } 
 
   // TODO:  other key pattern
-  var systemEvemts = Application("System Events"); 
+  var systemEvents = Application("System Events"); 
   vimApp.activate();
-  delay(0.1); 
+  delay(0.3); 
   if (type === TYPE_REPLACE_ALL || type === TYPE_REPLACE_SELECTED) { 
-    systemEvemts.keystroke("g"); 
-    systemEvemts.keystroke("g"); 
-    systemEvemts.keystroke("v",{ using:["shift down"]}); 
-    systemEvemts.keystroke("g",{ using:["shift down"]}); 
-  }
-  systemEvemts.keystroke("v",{ using:["command down"]}); 
+    systemEvents.keystroke("g"); 
+    systemEvents.keystroke("g"); 
+    systemEvents.keystroke("v",{ using:["shift down"]}); 
+    systemEvents.keystroke("g",{ using:["shift down"]}); 
+    systemEvents.keystroke('"_d'); 
+  } 
+  systemEvents.keystroke("i"); 
+  systemEvents.keystroke("v",{ using:["command down"]}); 
+  // esc
+  systemEvents.keyCode(53);
 }; 
 
 // argv[0]はtype
