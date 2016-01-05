@@ -21,7 +21,7 @@ var getTextFromVim = function () {
   var textFromVimArray = textFromVim.split(/\r\n|\r|\n/);
   var retText = '';
 
-  textFromVimArray.forEach(function(textFromVim) { 
+  textFromVimArray.forEach(function (textFromVim) { 
     retText += textFromVim + '\n'; 
   });
 
