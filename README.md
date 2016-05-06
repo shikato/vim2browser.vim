@@ -6,7 +6,7 @@ Vim2browser is a plugin to send texts with a browser in the Vim
 ```
 This plugin is available only in Mac.
 The reason why is because this plugin uses JXA.
-This Plugin dependes on no style paste with [shift + command + v].
+This plugin dependes on no style paste with [shift + command + v].
 ```
  
 ## Download
