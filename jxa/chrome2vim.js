@@ -46,7 +46,7 @@ var pasteToVimApp = function (vimAppName, type) {
 function run(argv){ 
   // TODO: keyを送るappName + 最前面に戻すappName + key を受け取る 
   if (argv.length < 2) {
-    console.log("Arguments are necessary more than two.");
+    console.log("The run method needs two arguments");
     return; 
   } 
 
