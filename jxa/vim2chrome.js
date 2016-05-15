@@ -3,7 +3,10 @@ var TYPE_REPLACE_SELECTED = "2";
 var TYPE_APPEND_ALL = "3"
 var TYPE_APPEND_SELECTED = "4" 
 
-var chromeApp = null; 
+var ACTIVATE_VIM = "1"; 
+var NOT_ACTIVATE_VIM = "2";
+
+var chromeApp = null;
 
 var clearChromeText = function () {
   var win = chromeApp.windows[0];
@@ -20,7 +23,7 @@ var getTextFromVim = function () {
   var textFromVim = currentApp.doShellScript('cat $HOME/.vim2browser/share.txt');
   var textFromVimArray = textFromVim.split(/\r\n|\r|\n/);
   var retText = '';
-
+ 
   textFromVimArray.forEach(function (textFromVim) { 
     retText += textFromVim + '\n'; 
   });
@@ -30,15 +33,14 @@ var getTextFromVim = function () {
 
 var saveTextInClipboard = function (text) { 
   chromeApp.setTheClipboardTo(text); 
-};
+}; 
 
-
-var pasteToChrome = function (vimAppName) {
+var pasteToChrome = function (vimAppName, activateVimType) {
   var vimApp = null;
   try { 
     vimApp = Application(vimAppName); 
   } catch(e) { 
-    console.log(e); 
+    console.log(e);
     return;
   } 
 
@@ -48,8 +50,10 @@ var pasteToChrome = function (vimAppName) {
 
   // TODO: keycode other petern
   systemEvemts.keystroke("v",{ using:["command down", "shift down"]}); 
-  vimApp.activate(); 
 
+  if (activateVimType === ACTIVATE_VIM) { 
+    vimApp.activate(); 
+  } 
 
   // 書式ありver 
   //var win = chromeApp.windows[0];
@@ -61,9 +65,10 @@ var pasteToChrome = function (vimAppName) {
 
 // argv[0] type
 // argv[1] VimAppName 
-function run(argv){ 
-  if (argv.length < 2) {
-    console.log("Arguments are necessary more than two.");
+// argv[2] Vimに復帰するかどうかのタイプ
+function run(argv) { 
+  if (argv.length !== 3) {
+    console.log("The run method needs three arguments");
     return; 
   } 
   
@@ -71,8 +76,8 @@ function run(argv){
     chromeApp = Application('Google Chrome'); 
     chromeApp.includeStandardAdditions = true; 
   } catch(e) {
-    console.log(e); 
-    return; 
+    console.log(e);
+    return;
   }
 
   if (argv[0] === TYPE_REPLACE_SELECTED || argv[0] === TYPE_REPLACE_ALL) {
@@ -80,8 +85,7 @@ function run(argv){
   } 
 
   saveTextInClipboard(getTextFromVim()); 
-  // argv[1]はVimAppName
-  pasteToChrome(argv[1]);
+  pasteToChrome(argv[1], argv[2]); 
 } 
 
 
