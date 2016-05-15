@@ -3,8 +3,8 @@ var TYPE_REPLACE_SELECTED = "2";
 var TYPE_APPEND_ALL = "3"
 var TYPE_APPEND_SELECTED = "4" 
 
-var IS_ACTIVATE_VIM = "1"; 
-var IS_NOT_ACTIVATE_VIM = "2";
+var ACTIVATE_VIM = "1"; 
+var NOT_ACTIVATE_VIM = "2";
 
 var chromeApp = null;
 
@@ -35,7 +35,7 @@ var saveTextInClipboard = function (text) {
   chromeApp.setTheClipboardTo(text); 
 }; 
 
-var pasteToChrome = function (vimAppName, isActivateVim) {
+var pasteToChrome = function (vimAppName, activateVimType) {
   var vimApp = null;
   try { 
     vimApp = Application(vimAppName); 
@@ -51,7 +51,7 @@ var pasteToChrome = function (vimAppName, isActivateVim) {
   // TODO: keycode other petern
   systemEvemts.keystroke("v",{ using:["command down", "shift down"]}); 
 
-  if (isActivateVim === IS_ACTIVATE_VIM) { 
+  if (activateVimType === ACTIVATE_VIM) { 
     vimApp.activate(); 
   } 
 
@@ -65,8 +65,8 @@ var pasteToChrome = function (vimAppName, isActivateVim) {
 
 // argv[0] type
 // argv[1] VimAppName 
-// argv[2] Vimに復帰するかどうか
-function run (argv) { 
+// argv[2] Vimに復帰するかどうかのタイプ
+function run(argv) { 
   if (argv.length !== 3) {
     console.log("The run method needs three arguments");
     return; 

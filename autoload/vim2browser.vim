@@ -39,7 +39,7 @@ endfunction
 
 function! vim2browser#Vim2ChromeAppendSelected() 
   call s:SaveShareTextList(s:GetSelectedTextList())
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_SELECTED . " " . s:vimAppName ." " . s:ACTIVATE_VIM . "  > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_SELECTED . " " . s:vimAppName . " " . s:ACTIVATE_VIM . "  > /dev/null 2>&1") 
 endfunction 
 
 
