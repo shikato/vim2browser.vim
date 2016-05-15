@@ -43,9 +43,8 @@ var pasteToVimApp = function (vimAppName, type) {
 
 // argv[0]はtype
 // argv[1]はVimAppName
-function run(argv){ 
-  // TODO: keyを送るappName + 最前面に戻すappName + key を受け取る 
-  if (argv.length < 2) {
+function run(argv) { 
+  if (argv.length !== 2) {
     console.log("The run method needs two arguments");
     return; 
   } 
@@ -60,5 +59,4 @@ function run(argv){
 
   saveTextInClipboardFromChrome(argv[0]); 
   pasteToVimApp(argv[1], argv[0]);
-}
-
+} 

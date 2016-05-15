@@ -24,49 +24,49 @@ let s:scriptsDir = expand('<sfile>:p:h')
 
 function! vim2browser#Vim2ChromeReplaseAll() 
   call s:SaveShareTextList(s:GetAllTextList())
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_REPLACE_ALL . " " . s:vimAppName ." " .  s:ACTIVATE_VIM ." > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_REPLACE_ALL . " " . s:vimAppName . " " . s:ACTIVATE_VIM . " > /dev/null 2>&1") 
 endfunction 
 
 function! vim2browser#Vim2ChromeReplaseSelected() 
   call s:SaveShareTextList(s:GetSelectedTextList())
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_REPLACE_SELECTED . " "  . s:vimAppName ." " . s:ACTIVATE_VIM ."  > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_REPLACE_SELECTED . " " . s:vimAppName . " " . s:ACTIVATE_VIM . "  > /dev/null 2>&1") 
 endfunction 
 
 function! vim2browser#Vim2ChromeAppendAll() 
   call s:SaveShareTextList(s:GetAllTextList())
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_ALL . " "  . s:vimAppName ." " . s:ACTIVATE_VIM ."  > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_ALL . " " . s:vimAppName . " " . s:ACTIVATE_VIM . "  > /dev/null 2>&1") 
 endfunction 
 
 function! vim2browser#Vim2ChromeAppendSelected() 
   call s:SaveShareTextList(s:GetSelectedTextList())
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_SELECTED . " "  . s:vimAppName ." " . s:ACTIVATE_VIM ."  > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_SELECTED . " " . s:vimAppName ." " . s:ACTIVATE_VIM . "  > /dev/null 2>&1") 
 endfunction 
 
 
 function! vim2browser#Vim2ChromeReplaseAllNotActivateVim() 
   call s:SaveShareTextList(s:GetAllTextList())
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_REPLACE_ALL . " " . s:vimAppName . " "  . s:NOT_ACTIVATE_VIM ."  > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_REPLACE_ALL . " " . s:vimAppName . " "  . s:NOT_ACTIVATE_VIM . "  > /dev/null 2>&1") 
 endfunction 
 
 function! vim2browser#Vim2ChromeReplaseSelectedNotActivateVim() 
   call s:SaveShareTextList(s:GetSelectedTextList())
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_REPLACE_SELECTED . " "  . s:vimAppName . " "  . s:NOT_ACTIVATE_VIM ."  > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_REPLACE_SELECTED . " " . s:vimAppName . " "  . s:NOT_ACTIVATE_VIM . "  > /dev/null 2>&1") 
 endfunction 
 
 function! vim2browser#Vim2ChromeAppendAllNotActivateVim() 
   call s:SaveShareTextList(s:GetAllTextList())
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_ALL . " "  . s:vimAppName . " "  . s:NOT_ACTIVATE_VIM ."  > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_ALL . " " . s:vimAppName . " "  . s:NOT_ACTIVATE_VIM . "  > /dev/null 2>&1") 
 endfunction 
 
 function! vim2browser#Vim2ChromeAppendSelectedNotActivateVim() 
   call s:SaveShareTextList(s:GetSelectedTextList())
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_SELECTED . " "  . s:vimAppName . " "  . s:NOT_ACTIVATE_VIM ."  > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/vim2chrome.js " . s:TYPE_APPEND_SELECTED . " " . s:vimAppName . " "  . s:NOT_ACTIVATE_VIM . "  > /dev/null 2>&1") 
 endfunction 
 
 " -----Chrome2Vim-----
 
 function! vim2browser#Chrome2VimReplaseAll()
-  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/chrome2vim.js " . s:TYPE_REPLACE_ALL . " "  . s:vimAppName . " > /dev/null 2>&1") 
+  call system("osascript -l JavaScript " . s:scriptsDir . "/../jxa/chrome2vim.js " . s:TYPE_REPLACE_ALL . " " . s:vimAppName . " > /dev/null 2>&1") 
 endfunction 
 
 function! vim2browser#Chrome2VimReplaseSelected() 
