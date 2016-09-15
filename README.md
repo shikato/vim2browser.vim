@@ -1,5 +1,5 @@
 # vim2browser.vim
-Vim2browser is a vim plugin to send texts to a browser from vim.
+Vim2browser is Vim plugin to send texts to a browser from Vim.
 
 ![demo1](https://qiita-image-store.s3.amazonaws.com/0/47437/78ab94b7-d387-4866-3cb0-bc3f019a22b6.gif)
  
